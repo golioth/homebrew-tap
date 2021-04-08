@@ -8,15 +8,15 @@ class Golioth < Formula
 
   if OS.mac?
     url "https://storage.googleapis.com/golioth-cli-releases/golioth/v0.10.0/golioth_0.10.0_macos_64bit.tar.gz", :using => CurlDownloadStrategy
-    sha256 "df9c74ba9ede5151c3e16ea4a9f51a6d9bdd7882435e256848a3352817c92a41"
+    sha256 "17d76857b3f218df1fba19036910271406d1cbec71a31dc1a960927811ef17fb"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://storage.googleapis.com/golioth-cli-releases/golioth/v0.10.0/golioth_0.10.0_linux_64bit.tar.gz", :using => CurlDownloadStrategy
-    sha256 "a55b2918f241b2d1fb73ce7af77200fc25a4559073e9caefa226a4bdb8b28fe6"
+    sha256 "f1b4f7f5004e2806aea701ba350a4bc3b97486ab7af4c44d4f22047db0666b8a"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://storage.googleapis.com/golioth-cli-releases/golioth/v0.10.0/golioth_0.10.0_linux_arm64.tar.gz", :using => CurlDownloadStrategy
-    sha256 "699cbf3dd1c6ceabb0e270027063bdd22abf67e4fc62a75a8222cfb44f181f9e"
+    sha256 "269d7306aab6e30096725df2a82466e0a29039ec3e380491fb2393462cd19324"
   end
 
   def install
