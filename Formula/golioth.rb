@@ -5,21 +5,21 @@
 class Golioth < Formula
   desc "Tool to help interact with Golioth Platform and with IoT development in general."
   homepage "https://docs.golioth.dev/"
-  version "0.10.3"
+  version "0.11.0"
   license "Apache-2.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://storage.googleapis.com/golioth-cli-releases/golioth/v0.10.3/golioth_0.10.3_macos_64bit.tar.gz", :using => CurlDownloadStrategy
-    sha256 "a82d9cb65e6b45c975e81f08ab264804e98c491644aec21f17ca1f7d5b9166a2"
+    url "https://storage.googleapis.com/golioth-cli-releases/golioth/v0.11.0/golioth_0.11.0_macos_64bit.tar.gz", :using => CurlDownloadStrategy
+    sha256 "496d1d51b5ff09268a3ea148f159bb17e921a97ecca824bdf2df6f156213b3b6"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://storage.googleapis.com/golioth-cli-releases/golioth/v0.10.3/golioth_0.10.3_linux_64bit.tar.gz", :using => CurlDownloadStrategy
-    sha256 "8d72c39361d777378b3e72a42e160ecd0b661b6e7e55bca1ef98b9ab0571d5ea"
+    url "https://storage.googleapis.com/golioth-cli-releases/golioth/v0.11.0/golioth_0.11.0_linux_64bit.tar.gz", :using => CurlDownloadStrategy
+    sha256 "c28f70d44623ba964366a369a0f89d50d8700ce746fa18bd9a8e4975ddafea22"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://storage.googleapis.com/golioth-cli-releases/golioth/v0.10.3/golioth_0.10.3_linux_arm64.tar.gz", :using => CurlDownloadStrategy
-    sha256 "28727f495fb6288f2b87cb01ca955acb99918942838dea83af33b02ac5cfc661"
+    url "https://storage.googleapis.com/golioth-cli-releases/golioth/v0.11.0/golioth_0.11.0_linux_arm64.tar.gz", :using => CurlDownloadStrategy
+    sha256 "e70f1e6bf97cfea7b7d3fa478e474e425905af5846b3f8da5d03e04535d0c064"
   end
 
   def install
