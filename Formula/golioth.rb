@@ -5,25 +5,30 @@
 class Golioth < Formula
   desc "Tool to help interact with Golioth Platform and with IoT development in general."
   homepage "https://docs.golioth.dev/"
-  version "0.13.0"
+  version "0.13.1"
   license "Apache-2.0"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://storage.googleapis.com/golioth-cli-releases/golioth/v0.13.0/golioth_0.13.0_macos_64bit.tar.gz", :using => CurlDownloadStrategy
-    sha256 "5e6ee66f114368d7fa3dd7aed7781cb45bb4f4a6e04c8c65557f9a40b114c254"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://storage.googleapis.com/golioth-cli-releases/golioth/v0.13.1/golioth_0.13.1_macos_64bit.tar.gz", :using => CurlDownloadStrategy
+      sha256 "67f44e8d7fb9584284d0ee29dced50d598fbd5cca5e4b671b8ea450074bccfd8"
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://storage.googleapis.com/golioth-cli-releases/golioth/v0.13.0/golioth_0.13.0_linux_64bit.tar.gz", :using => CurlDownloadStrategy
-    sha256 "500ad3e1dd9535c312af5b61992e55e2a22c7921e252f9b46d0a349a07993ac7"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://storage.googleapis.com/golioth-cli-releases/golioth/v0.13.0/golioth_0.13.0_linux_arm64.tar.gz", :using => CurlDownloadStrategy
-    sha256 "5603a90fcce0b9150b37cae6e1f1a2684cdfceb8c609cac8367283f042e06e38"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://storage.googleapis.com/golioth-cli-releases/golioth/v0.13.1/golioth_0.13.1_linux_64bit.tar.gz", :using => CurlDownloadStrategy
+      sha256 "80c9257ee03bd3df7255b377e1a0e3a5557db57af853ee12ede2a9701bd0c3fb"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://storage.googleapis.com/golioth-cli-releases/golioth/v0.13.1/golioth_0.13.1_linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "103a0738118a9fcb8cc3252f4024b43d9e175e8cf570449a1c5d832705eda2be"
+    end
   end
 
   def install
     bin.install "goliothctl"
-    bin.install "gurl"
+    bin.install "coap"
   end
 end
