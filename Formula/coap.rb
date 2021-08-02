@@ -5,25 +5,25 @@
 class Coap < Formula
   desc "Tool to help testing coap endpoints."
   homepage "https://docs.golioth.dev/"
-  version "1.0.1"
+  version "1.0.2"
   license "Apache-2.0"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://storage.googleapis.com/golioth-cli-releases/coap-cli/v1.0.1/coap-cli_1.0.1_macos_64bit.tar.gz", :using => CurlDownloadStrategy
-      sha256 "21a83476eeff0c117ea69020ba9f7f9e3d4c1fcceb8c8f97c18b314f9ca7a8d8"
+      url "https://storage.googleapis.com/golioth-cli-releases/coap-cli/v1.0.2/coap-cli_1.0.2_macos_64bit.tar.gz", :using => CurlDownloadStrategy
+      sha256 "fc9c286abc53516c72f5aa85c3e2c7d9dcf3bba903aa60a23b4ddc86c8cd05e9"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://storage.googleapis.com/golioth-cli-releases/coap-cli/v1.0.1/coap-cli_1.0.1_linux_64bit.tar.gz", :using => CurlDownloadStrategy
-      sha256 "9dfcb484001c42912878d6a9770618baf0e8e4f44574fb60c3a32937a4459e46"
+      url "https://storage.googleapis.com/golioth-cli-releases/coap-cli/v1.0.2/coap-cli_1.0.2_linux_64bit.tar.gz", :using => CurlDownloadStrategy
+      sha256 "bb2b4e2ace51832fdf05f62f9d2d5fcc99ec10933cbc0ff3893318a0b7c38db6"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://storage.googleapis.com/golioth-cli-releases/coap-cli/v1.0.1/coap-cli_1.0.1_linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "b11fa18baee84769cf860b0e8f9bbaf8dba9ac922ad7d4af2cbf932e679c580e"
+      url "https://storage.googleapis.com/golioth-cli-releases/coap-cli/v1.0.2/coap-cli_1.0.2_linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "75ba934b52ff846e8319b84ddd74c89212b6ebe165b99ec1a72b3649c09fa258"
     end
   end
 
