@@ -5,29 +5,36 @@
 class Goliothctl < Formula
   desc "Tool to help interact with Golioth Platform and with IoT development in general."
   homepage "https://docs.golioth.dev/"
-  version "1.2.0"
+  version "1.2.1"
   license "Apache-2.0"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.2.0/goliothctl_1.2.0_macos_64bit.tar.gz", :using => CurlDownloadStrategy
-      sha256 "d42abf0bba8aa7cd02c390370f4e8c8aaf17badc8d7e2b170b4a8160037152a1"
+      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.2.1/goliothctl_1.2.1_macos_64bit.tar.gz", :using => CurlDownloadStrategy
+      sha256 "01475a8f7ed9ca1912e6b2e4a5c3afc2de4a05ac3b230aa82c31e3e19534900c"
+
+      def install
+        bin.install "goliothctl"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.2.0/goliothctl_1.2.0_linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "4750c8069d0a32c4ccbf00109ad1e7977933686627f7ce86a22967acb28ee380"
-    end
     if Hardware::CPU.intel?
-      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.2.0/goliothctl_1.2.0_linux_64bit.tar.gz", :using => CurlDownloadStrategy
-      sha256 "d6e0cb8c9478a1f3610fecb524966ea36a32da30aa0ad68994c91c34956cf667"
-    end
-  end
+      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.2.1/goliothctl_1.2.1_linux_64bit.tar.gz", :using => CurlDownloadStrategy
+      sha256 "07496a566e9809bd1c00cf332db52c09fabdb48874aa5069a592309b3508bf95"
 
-  def install
-    bin.install "goliothctl"
+      def install
+        bin.install "goliothctl"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.2.1/goliothctl_1.2.1_linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "105930947672f17cad484ef56d0292239edf589c2dafc0aae6e1f2e55fbd39b8"
+
+      def install
+        bin.install "goliothctl"
+      end
+    end
   end
 end
