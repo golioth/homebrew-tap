@@ -7,7 +7,6 @@ class Coap < Formula
   homepage "https://docs.golioth.io/"
   version "1.0.5"
   license "Apache-2.0"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
