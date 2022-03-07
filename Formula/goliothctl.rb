@@ -5,13 +5,13 @@
 class Goliothctl < Formula
   desc "Tool to help interact with Golioth Platform and with IoT development in general."
   homepage "https://docs.golioth.dev/"
-  version "1.3.1"
+  version "1.4.0-beta.1"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.3.1/goliothctl_1.3.1_macos_64bit.tar.gz", :using => CurlDownloadStrategy
-      sha256 "fc70ac9918031c25f7b3e3f777b0b2721c823536da6202b591bcda753df3e220"
+      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.4.0-beta.1/goliothctl_1.4.0-beta.1_macos_64bit.tar.gz", :using => CurlDownloadStrategy
+      sha256 "300b6f316f30af662283793f425a827dda9e1ad483525fcbcb7986bc901d6d7d"
 
       def install
         bin.install "goliothctl"
@@ -21,16 +21,16 @@ class Goliothctl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.3.1/goliothctl_1.3.1_linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "10a9cf33ade64ee46af532e20c95867b53d54713a9c86f09939b88d8b1e6b3f4"
+      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.4.0-beta.1/goliothctl_1.4.0-beta.1_linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "d0107e6a58107faa9127ceb39218727fce49ef7887592caca6035d667339c255"
 
       def install
         bin.install "goliothctl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.3.1/goliothctl_1.3.1_linux_64bit.tar.gz", :using => CurlDownloadStrategy
-      sha256 "d9edde04f80b7a31eb9b44e180e2b547a1f6ebb1d25d4ec3212d89658d638cf4"
+      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.4.0-beta.1/goliothctl_1.4.0-beta.1_linux_64bit.tar.gz", :using => CurlDownloadStrategy
+      sha256 "f893fb7c76fd1c5cfda2468aee920ee284ec69ff26acc0eac142ec261e680849"
 
       def install
         bin.install "goliothctl"
