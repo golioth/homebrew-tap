@@ -5,13 +5,13 @@
 class Goliothctl < Formula
   desc "Tool to help interact with Golioth Platform and with IoT development in general."
   homepage "https://docs.golioth.dev/"
-  version "1.4.0"
+  version "1.5.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.4.0/goliothctl_1.4.0_macos_64bit.tar.gz", :using => CurlDownloadStrategy
-      sha256 "14ec7db7f74067d58f8886ba0659597b0455f8d30b5756c811e5c20bc6623383"
+      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.5.0/goliothctl_1.5.0_macos_64bit.tar.gz", :using => CurlDownloadStrategy
+      sha256 "366af9984b04e8628f79fd60d2349bfa1bad155b15323ec98ed2c8096f1c9741"
 
       def install
         bin.install "goliothctl"
@@ -21,16 +21,16 @@ class Goliothctl < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.4.0/goliothctl_1.4.0_linux_64bit.tar.gz", :using => CurlDownloadStrategy
-      sha256 "75a4c0dce07eb1e07b3c65539e4a2d8782bc4216b154a78f7ea932e692715224"
+      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.5.0/goliothctl_1.5.0_linux_64bit.tar.gz", :using => CurlDownloadStrategy
+      sha256 "6ead968e5731c6d8fecae7a8de56fc0bdbd1aac49f2e56f69d53f8465c3111f3"
 
       def install
         bin.install "goliothctl"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.4.0/goliothctl_1.4.0_linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "c464bd13c9731b7b0b1ae96b4fb4f468ee74bd8b5d7db87853b2106799f66a42"
+      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.5.0/goliothctl_1.5.0_linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "d7758cb5b161d0cb275a12c009c6a7bb3660436b25c895b0cf8797c2f53fe0a7"
 
       def install
         bin.install "goliothctl"
