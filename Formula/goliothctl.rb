@@ -11,7 +11,7 @@ class Goliothctl < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.5.1/goliothctl_1.5.1_macos_64bit.tar.gz", :using => CurlDownloadStrategy
-      sha256 "5a66e93b6399c4f95d46a7f1b00d471c91c7fc067f19d9604ec6b7c05cfc9faa"
+      sha256 "3bde10cb7f00191a881e173f7d82c822cf8abd3b9937b8e54fdce07427416d9a"
 
       def install
         bin.install "goliothctl"
@@ -20,17 +20,17 @@ class Goliothctl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.5.1/goliothctl_1.5.1_linux_64bit.tar.gz", :using => CurlDownloadStrategy
-      sha256 "cfd5aeb6e65f22d9bb888c006d3f30a33d77677a28c6fd7079b3d9c26c3265de"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.5.1/goliothctl_1.5.1_linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "f525a096dcdc3f8014968c43447663bc430e9d242d3e26b58b3f690ed28eac39"
 
       def install
         bin.install "goliothctl"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.5.1/goliothctl_1.5.1_linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "8baef05c46293ec49db4648e51c0ad1f6594b5a865a24e4adbf12eb4404300c3"
+    if Hardware::CPU.intel?
+      url "https://storage.googleapis.com/golioth-cli-releases/goliothctl/v1.5.1/goliothctl_1.5.1_linux_64bit.tar.gz", :using => CurlDownloadStrategy
+      sha256 "e68f39831eaa0a0268a402847cd0a6f1018d562535736db9a7b6063eb6665295"
 
       def install
         bin.install "goliothctl"
