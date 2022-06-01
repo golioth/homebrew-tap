@@ -5,13 +5,21 @@
 class Coap < Formula
   desc "Tool to help testing coap endpoints."
   homepage "https://docs.golioth.io/"
-  version "1.1.0"
+  version "1.2.0-beta.1"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://storage.googleapis.com/golioth-cli-releases/coap-cli/v1.1.0/coap-cli_1.1.0_macos_64bit.tar.gz", :using => CurlDownloadStrategy
-      sha256 "6497407a09cfe4ea49e7c010275ed249d841f21256353d580fb45781581caba7"
+      url "https://storage.googleapis.com/golioth-cli-releases/coap-cli/v1.2.0-beta.1/coap-cli_1.2.0-beta.1_macos_64bit.tar.gz", :using => CurlDownloadStrategy
+      sha256 "7381601a303fb320391f5468e51d4be6c0b4ec02156a6b95733ca701a2a922d4"
+
+      def install
+        bin.install "coap"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://storage.googleapis.com/golioth-cli-releases/coap-cli/v1.2.0-beta.1/coap-cli_1.2.0-beta.1_macos_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "6947cd3a558331f2a2e47b611ffe79a537519c91f9a0b81b90a63e0b35ee9dcc"
 
       def install
         bin.install "coap"
@@ -20,17 +28,17 @@ class Coap < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://storage.googleapis.com/golioth-cli-releases/coap-cli/v1.1.0/coap-cli_1.1.0_linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "23789e6323c2dc715444a5d59c32ab04aa76190692eff9ed05352d21568d9272"
+    if Hardware::CPU.intel?
+      url "https://storage.googleapis.com/golioth-cli-releases/coap-cli/v1.2.0-beta.1/coap-cli_1.2.0-beta.1_linux_64bit.tar.gz", :using => CurlDownloadStrategy
+      sha256 "84c3b80e8de267657c798cb129a4c2bf09791cfe05c9e6d640b963cadebbb100"
 
       def install
         bin.install "coap"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://storage.googleapis.com/golioth-cli-releases/coap-cli/v1.1.0/coap-cli_1.1.0_linux_64bit.tar.gz", :using => CurlDownloadStrategy
-      sha256 "4cfd976cd5fbe330583d6d2dbfe4ccc1b1df9493cbfd94cefd9a5a074020e058"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://storage.googleapis.com/golioth-cli-releases/coap-cli/v1.2.0-beta.1/coap-cli_1.2.0-beta.1_linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "c5a765ef80abda16b284ad8de59a5d0b8b98c70250aa50fb372bce67d658bd22"
 
       def install
         bin.install "coap"
